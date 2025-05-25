@@ -12,18 +12,19 @@ export default function Icon() {
   return new ImageResponse(
     <div
       style={{
-        fontSize: 24,
-        background: "black",
+        fontSize: 20,
+        background: "linear-gradient(135deg, #3C2415 0%, #8B4513 100%)",
         width: "100%",
         height: "100%",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        color: "white",
+        color: "#F5E6D3",
         borderRadius: "50%",
+        border: "2px solid #D2691E",
       }}
     >
-      AZ
+      ☕
     </div>,
     // ImageResponse options
     {

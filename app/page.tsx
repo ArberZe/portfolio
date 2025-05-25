@@ -1,97 +1,107 @@
-import { Github, Mail, Linkedin } from "lucide-react"
+import { Github, Mail, Linkedin, Coffee } from "lucide-react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import AboutMe from "@/components/AboutMe"
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen">
-      <header className="px-4 lg:px-6 h-16 flex items-center">
-        <Link className="flex items-center justify-center" href="#">
-        <span className="font-bold text-lg sm:text-xl">Arber Dev</span>
+    <div className="flex flex-col min-h-screen bg-cream">
+      <header className="px-4 lg:px-6 h-16 flex items-center bg-white/80 backdrop-blur-sm border-b border-espresso/10">
+        <Link className="flex items-center justify-center gap-2" href="#">
+          <Coffee className="h-6 w-6 text-espresso" />
+          <span className="font-bold text-xl text-espresso">Portfolio</span>
         </Link>
         <nav className="ml-auto flex gap-4 sm:gap-6">
-          <Link className="text-sm font-medium hover:underline underline-offset-4" href="#about">
+          <Link className="text-sm font-medium hover:text-espresso transition-colors text-coffee" href="#about">
             About
           </Link>
-          <Link className="text-sm font-medium hover:underline underline-offset-4" href="#skills">
+          <Link className="text-sm font-medium hover:text-espresso transition-colors text-coffee" href="#skills">
             Skills
           </Link>
-          <Link className="text-sm font-medium hover:underline underline-offset-4" href="#projects">
+          <Link className="text-sm font-medium hover:text-espresso transition-colors text-coffee" href="#projects">
             Projects
           </Link>
-          <Link className="text-sm font-medium hover:underline underline-offset-4" href="#contact">
+          <Link className="text-sm font-medium hover:text-espresso transition-colors text-coffee" href="#contact">
             Contact
           </Link>
         </nav>
       </header>
       <main className="flex-1">
-        <section id="about" className="w-full py-12 md:py-24 lg:py-32">
-          <div className="container px-4 md:px-6">
+        <section id="about" className="w-full py-12 md:py-24 lg:py-32 relative overflow-hidden">
+          <div className="absolute inset-0">
+            <div className="coffee-steam"></div>
+          </div>
+          <div className="container px-4 md:px-6 relative z-10">
             <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
               <div className="flex flex-col justify-center space-y-4">
-                {/* <div className="space-y-2">
-                  <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
-                    Hi, I'm <span className="text-primary">Arber Zeka</span>
+                <div className="space-y-2">
+                  <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none text-espresso">
+                    Hi, I'm <span className="text-amber">Arber</span>
                   </h1>
-                  <p className="max-w-[600px] text-gray-500 md:text-xl dark:text-gray-400">
-                    I'm a passionate developer focused on creating beautiful and functional web experiences. Welcome to
-                    my portfolio where I showcase my projects and skills.
+                  <p className="max-w-[600px] text-coffee/80 md:text-xl">
+                    I'm a passionate developer who crafts digital experiences as rich and satisfying as a perfect
+                    espresso shot. Welcome to my portfolio where creativity meets code.
                   </p>
-                </div> */}
-                <AboutMe />
+                </div>
                 <div className="flex flex-col gap-2 min-[400px]:flex-row">
                   <Link href="#contact">
-                    <Button>Get in Touch</Button>
+                    <Button className="bg-espresso hover:bg-espresso/90 text-cream">Brew Something Together</Button>
                   </Link>
                   <Link href="#projects">
-                    <Button variant="outline">View My Work</Button>
+                    <Button variant="outline" className="border-coffee text-coffee hover:bg-coffee hover:text-cream">
+                      View My Blend
+                    </Button>
                   </Link>
                 </div>
                 <div className="flex gap-4">
-                  <Link href="https://github.com/ArberZe" target="_blank" rel="noopener noreferrer">
-                    <Button variant="ghost" size="icon">
+                  <Link href="https://github.com/arberze" target="_blank" rel="noopener noreferrer">
+                    <Button variant="ghost" size="icon" className="text-coffee hover:text-espresso hover:bg-cream">
                       <Github className="h-5 w-5" />
                       <span className="sr-only">GitHub</span>
                     </Button>
                   </Link>
-                  <Link href="https://www.linkedin.com/in/arber-zeka-742452220/" target="_blank" rel="noopener noreferrer">
-                    <Button variant="ghost" size="icon">
+                  <Link href="https://linkedin.com/in/arber-zeka" target="_blank" rel="noopener noreferrer">
+                    <Button variant="ghost" size="icon" className="text-coffee hover:text-espresso hover:bg-cream">
                       <Linkedin className="h-5 w-5" />
                       <span className="sr-only">LinkedIn</span>
                     </Button>
                   </Link>
-                  <Link href="mailto:your.arber.dev@outlook.com">
-                    <Button variant="ghost" size="icon">
+                  <Link href="mailto:arber.dev@outlook.com">
+                    <Button variant="ghost" size="icon" className="text-coffee hover:text-espresso hover:bg-cream">
                       <Mail className="h-5 w-5" />
                       <span className="sr-only">Email</span>
                     </Button>
                   </Link>
                 </div>
               </div>
-              <div className="flex items-center justify-center">
-                <img
-                  alt="Profile"
-                  className="rounded-full object-cover border-4 border-primary/20"
-                  height="400"
-                  src="/erasebg-transformed.png?height=400&width=400"
-                  style={{
-                    aspectRatio: "400/400",
-                    objectFit: "cover",
-                  }}
-                  width="400"
-                />
+              <div className="flex items-center justify-center relative">
+                <div className="relative">
+                  <img
+                    alt="Profile"
+                    className="rounded-full object-cover border-4 border-amber/30 shadow-2xl"
+                    height="400"
+                    src="/erasebg-transformed.png?height=400&width=400"
+                    style={{
+                      aspectRatio: "400/400",
+                      objectFit: "cover",
+                    }}
+                    width="400"
+                  />
+                  <div className="coffee-beans"></div>
+                </div>
               </div>
             </div>
           </div>
         </section>
-        <section id="skills" className="w-full py-12 md:py-24 lg:py-32 bg-gray-50 dark:bg-gray-900">
+
+        <section id="skills" className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-b from-cream to-latte">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">My Skills</h2>
-                <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-                  Here are some of the technologies and tools I work with
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-espresso">
+                  My Brewing Skills
+                </h2>
+                <p className="max-w-[900px] text-coffee/80 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                  Like a master barista, I've perfected these technologies to create exceptional digital experiences
                 </p>
               </div>
             </div>
@@ -102,13 +112,17 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section id="projects" className="w-full py-12 md:py-24 lg:py-32">
-          <div className="container px-4 md:px-6">
+
+        <section id="projects" className="w-full py-12 md:py-24 lg:py-32 relative">
+          <div className="espresso-pour"></div>
+          <div className="container px-4 md:px-6 relative z-10">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">My Projects</h2>
-                <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-                  Check out some of my recent work
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-espresso">
+                  My Coffee Portfolio
+                </h2>
+                <p className="max-w-[900px] text-coffee/80 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                  Each project is carefully crafted, like the perfect espresso shot
                 </p>
               </div>
             </div>
@@ -119,7 +133,7 @@ export default function Home() {
                 tags={["React", "Tailwind CSS", "ASP.NET CORE 8", "SQL Server"]}
                 imageUrl="/nrruge.png?height=250&width=350"
                 projectUrl="https://www.nrruge.com/"
-                buttonText="View nrruge"
+                buttonText="Taste nrruge brew"
               />
               <ProjectCard
                 title="MealPath"
@@ -127,7 +141,7 @@ export default function Home() {
                 tags={["React", "ASP.NET Core 8", "Stripe", "Tailwind CSS", "CQRS"]}
                 imageUrl="/mealpath.png?height=250&width=350"
                 projectUrl="https://github.com/ArberZe/MealPath.OrderManagement"
-                buttonText="View Project"
+                buttonText="taste MealPath brew"
               />
               <ProjectCard
                 title="Many more projects"
@@ -135,44 +149,59 @@ export default function Home() {
                 tags={["JavaScript", "TypeScript", "React", "Blazor", "Node.js","SignalR", "Firebase", "MongoDB"]}
                 imageUrl="/many-more.png?height=250&width=350"
                 projectUrl="https://github.com/ArberZe"
-                buttonText="View Github"
+                buttonText="Taste many more brews"
               />
             </div>
           </div>
         </section>
-        <section id="contact" className="w-full py-12 md:py-24 lg:py-32 bg-gray-50 dark:bg-gray-900">
+
+        <section id="contact" className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-b from-latte to-cream">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Get in Touch</h2>
-                <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-                  Feel free to reach out for collaborations or just a friendly hello
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-espresso">
+                  Let's Brew Something Together
+                </h2>
+                <p className="max-w-[900px] text-coffee/80 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                  Ready to create something amazing? Let's grab a coffee and discuss your next project
                 </p>
               </div>
               <div className="w-full max-w-sm space-y-2">
                 <div className="flex justify-center space-x-4">
-                  <Link href="https://github.com/ArberZe" target="_blank" rel="noopener noreferrer">
-                    <Button variant="outline" size="icon">
+                  <Link href="https://github.com/arberze" target="_blank" rel="noopener noreferrer">
+                    <Button
+                      variant="outline"
+                      size="icon"
+                      className="border-coffee text-coffee hover:bg-coffee hover:text-cream"
+                    >
                       <Github className="h-5 w-5" />
                       <span className="sr-only">GitHub</span>
                     </Button>
                   </Link>
-                  <Link href="https://linkedin.com/in/arber-zeka-742452220/" target="_blank" rel="noopener noreferrer">
-                    <Button variant="outline" size="icon">
+                  <Link href="https://linkedin.com/in/arber-zeka" target="_blank" rel="noopener noreferrer">
+                    <Button
+                      variant="outline"
+                      size="icon"
+                      className="border-coffee text-coffee hover:bg-coffee hover:text-cream"
+                    >
                       <Linkedin className="h-5 w-5" />
                       <span className="sr-only">LinkedIn</span>
                     </Button>
                   </Link>
                   <Link href="mailto:arber.dev@outlook.com">
-                    <Button variant="outline" size="icon">
+                    <Button
+                      variant="outline"
+                      size="icon"
+                      className="border-coffee text-coffee hover:bg-coffee hover:text-cream"
+                    >
                       <Mail className="h-5 w-5" />
                       <span className="sr-only">Email</span>
                     </Button>
                   </Link>
                 </div>
-                <p className="text-xs text-gray-500 dark:text-gray-400">
+                <p className="text-xs text-coffee/60">
                   Or email me directly at{" "}
-                  <Link className="underline underline-offset-2" href="mailto:arber.dev@outlook.com">
+                  <Link className="underline underline-offset-2 text-espresso" href="mailto:your.email@example.com">
                     arber.dev@outlook.com
                   </Link>
                 </p>
@@ -181,19 +210,28 @@ export default function Home() {
           </div>
         </section>
       </main>
-      <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t">
-        <p className="text-xs text-gray-500 dark:text-gray-400">© 2024 Arber Zeka. All rights reserved.</p>
+      <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t border-coffee/20 bg-white/50">
+        <p className="text-xs text-coffee/60">© 2025 Arber Zeka. Crafted with ☕ and code.</p>
         <nav className="sm:ml-auto flex gap-4 sm:gap-6">
-          <Link className="text-xs hover:underline underline-offset-4" href="#about">
+          <Link className="text-xs hover:underline underline-offset-4 text-coffee/60 hover:text-espresso" href="#about">
             About
           </Link>
-          <Link className="text-xs hover:underline underline-offset-4" href="#skills">
+          <Link
+            className="text-xs hover:underline underline-offset-4 text-coffee/60 hover:text-espresso"
+            href="#skills"
+          >
             Skills
           </Link>
-          <Link className="text-xs hover:underline underline-offset-4" href="#projects">
+          <Link
+            className="text-xs hover:underline underline-offset-4 text-coffee/60 hover:text-espresso"
+            href="#projects"
+          >
             Projects
           </Link>
-          <Link className="text-xs hover:underline underline-offset-4" href="#contact">
+          <Link
+            className="text-xs hover:underline underline-offset-4 text-coffee/60 hover:text-espresso"
+            href="#contact"
+          >
             Contact
           </Link>
         </nav>
@@ -204,14 +242,14 @@ export default function Home() {
 
 function SkillCard({ title, skills }: { title: string; skills: string[] }) {
   return (
-    <div className="flex flex-col items-center space-y-4 rounded-lg border p-4 shadow-sm transition-all hover:shadow-md">
+    <div className="flex flex-col items-center space-y-4 rounded-lg border border-coffee/20 p-4 shadow-sm transition-all hover:shadow-lg hover:border-amber/40 bg-white/80 backdrop-blur-sm group">
       <div className="space-y-2 text-center">
-        <h3 className="text-xl font-bold">{title}</h3>
+        <h3 className="text-xl font-bold text-espresso group-hover:text-amber transition-colors">{title}</h3>
         <div className="flex flex-wrap justify-center gap-2">
           {skills.map((skill) => (
             <span
               key={skill}
-              className="inline-flex items-center rounded-md bg-primary/10 px-2 py-1 text-xs font-medium text-primary ring-1 ring-inset ring-primary/20"
+              className="inline-flex items-center rounded-md bg-amber/20 px-2 py-1 text-xs font-medium text-espresso ring-1 ring-inset ring-amber/30 hover:bg-amber/30 transition-colors"
             >
               {skill}
             </span>
@@ -238,8 +276,8 @@ function ProjectCard({
   buttonText: string
 }) {
   return (
-    <div className="group flex flex-col items-start gap-2 rounded-lg border overflow-hidden transition-all hover:shadow-lg">
-      <div className="w-full overflow-hidden">
+    <div className="group flex flex-col items-start gap-2 rounded-lg border border-coffee/20 overflow-hidden transition-all hover:shadow-xl hover:border-amber/40 bg-white/90 backdrop-blur-sm">
+      <div className="w-full overflow-hidden relative">
         <img
           alt={title}
           className="aspect-video w-full object-cover transition-all group-hover:scale-105"
@@ -247,15 +285,16 @@ function ProjectCard({
           src={imageUrl || "/placeholder.svg"}
           width="350"
         />
+        <div className="absolute inset-0 bg-gradient-to-t from-espresso/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
       </div>
       <div className="p-4 space-y-2">
-        <h3 className="font-bold text-xl">{title}</h3>
-        <p className="text-sm text-gray-500 dark:text-gray-400">{description}</p>
+        <h3 className="font-bold text-xl text-espresso group-hover:text-amber transition-colors">{title}</h3>
+        <p className="text-sm text-coffee/80">{description}</p>
         <div className="flex flex-wrap gap-2 pt-2">
           {tags.map((tag) => (
             <span
               key={tag}
-              className="inline-flex items-center rounded-md bg-primary/10 px-2 py-1 text-xs font-medium text-primary ring-1 ring-inset ring-primary/20"
+              className="inline-flex items-center rounded-md bg-amber/20 px-2 py-1 text-xs font-medium text-espresso ring-1 ring-inset ring-amber/30"
             >
               {tag}
             </span>
@@ -263,7 +302,7 @@ function ProjectCard({
         </div>
         <div className="pt-4">
           <Link href={projectUrl}>
-            <Button variant="outline" size="sm">
+            <Button variant="outline" size="sm" className="border-coffee text-coffee hover:bg-coffee hover:text-cream">
               {buttonText}
             </Button>
           </Link>
