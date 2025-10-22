@@ -1,4 +1,4 @@
-import { Github, Mail, Linkedin, Coffee } from "lucide-react"
+import { Github, Mail, Linkedin, Coffee, Heart } from "lucide-react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 
@@ -44,11 +44,17 @@ export default function Home() {
                 </div>
                 <div className="flex flex-col gap-2 min-[400px]:flex-row">
                   <Link href="#contact">
-                    <Button className="bg-espresso hover:bg-espresso/90 text-cream">Brew Something Together</Button>
+                    <Button className="bg-espresso hover:bg-gray-50 text-cream border border-espresso">Brew Something Together</Button>
                   </Link>
                   <Link href="#projects">
-                    <Button variant="outline" className="border-coffee text-coffee hover:bg-coffee hover:text-cream">
+                    <Button variant="outline" className="bg-white border-coffee text-coffee hover:bg-gray-50 hover:text-coffee">
                       View My Blend
+                    </Button>
+                  </Link>
+                  <Link href="https://patreon.com/arberdev?utm_medium=unknown&utm_source=join_link&utm_campaign=creatorshare_fan&utm_content=copyLink" target="_blank" rel="noopener noreferrer">
+                    <Button className="bg-[#FF424D] text-white hover:bg-[#e63946] border-[#FF424D] flex items-center gap-2">
+                      <Heart className="h-4 w-4" />
+                      Support My Work
                     </Button>
                   </Link>
                 </div>
@@ -71,6 +77,12 @@ export default function Home() {
                       <span className="sr-only">Email</span>
                     </Button>
                   </Link>
+                  <Link href="https://patreon.com/arberdev?utm_medium=unknown&utm_source=join_link&utm_campaign=creatorshare_fan&utm_content=copyLink" target="_blank" rel="noopener noreferrer">
+                    <Button size="icon" className="bg-[#FF424D] text-white hover:bg-[#e63946]">
+                      <Heart className="h-5 w-5" />
+                      <span className="sr-only">Support on Patreon</span>
+                    </Button>
+                  </Link>
                 </div>
               </div>
               <div className="flex items-center justify-center relative">
@@ -79,7 +91,7 @@ export default function Home() {
                     alt="Profile"
                     className="rounded-full object-cover border-4 border-amber/30 shadow-2xl"
                     height="400"
-                    src="/erasebg-transformed.png?height=400&width=400"
+                    src="/ArberProfilePic.webp?height=400&width=400"
                     style={{
                       aspectRatio: "400/400",
                       objectFit: "cover",
@@ -128,11 +140,19 @@ export default function Home() {
             </div>
             <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 py-12 md:grid-cols-2 lg:grid-cols-3">
               <ProjectCard
+                title="KosovoGeo Api"
+                description="A REST API to get places of Kosovo"
+                tags={["HTML", "CSS", "ASP.NET CORE 8", "POSTGRESQL"]}
+                imageUrl="/kosovogeoapi.png?height=250&width=350"
+                projectUrl="https://kosovo-geo-api.runasp.net/explore.html"
+                buttonText="Taste kosovo geo brew"
+              />
+              <ProjectCard
                 title="nrruge"
-                description="My small new baby company. A responsive web application built with React and .NET core/ASP NET core 8"
+                description="My main side project. A responsive web application built with React and .NET core/ASP NET core 8"
                 tags={["React", "Tailwind CSS", "ASP.NET CORE 8", "SQL Server"]}
                 imageUrl="/nrruge.png?height=250&width=350"
-                projectUrl="https://www.nrruge.com/"
+                projectUrl="https://www.nrruge.vercel.com/"
                 buttonText="Taste nrruge brew"
               />
               <ProjectCard
@@ -172,7 +192,7 @@ export default function Home() {
                     <Button
                       variant="outline"
                       size="icon"
-                      className="border-coffee text-coffee hover:bg-coffee hover:text-cream"
+                      className="bg-white border-coffee text-coffee hover:bg-gray-50 hover:text-coffee"
                     >
                       <Github className="h-5 w-5" />
                       <span className="sr-only">GitHub</span>
@@ -182,7 +202,7 @@ export default function Home() {
                     <Button
                       variant="outline"
                       size="icon"
-                      className="border-coffee text-coffee hover:bg-coffee hover:text-cream"
+                      className="bg-white border-coffee text-coffee hover:bg-gray-50 hover:text-coffee"
                     >
                       <Linkedin className="h-5 w-5" />
                       <span className="sr-only">LinkedIn</span>
@@ -192,10 +212,19 @@ export default function Home() {
                     <Button
                       variant="outline"
                       size="icon"
-                      className="border-coffee text-coffee hover:bg-coffee hover:text-cream"
+                      className="bg-white border-coffee text-coffee hover:bg-gray-50 hover:text-coffee"
                     >
                       <Mail className="h-5 w-5" />
                       <span className="sr-only">Email</span>
+                    </Button>
+                  </Link>
+                  <Link href="https://patreon.com/arberdev?utm_medium=unknown&utm_source=join_link&utm_campaign=creatorshare_fan&utm_content=copyLink" target="_blank" rel="noopener noreferrer">
+                    <Button
+                      size="icon"
+                      className="bg-[#FF424D] text-white hover:bg-[#e63946]"
+                    >
+                      <Heart className="h-5 w-5" />
+                      <span className="sr-only">Support on Patreon</span>
                     </Button>
                   </Link>
                 </div>
@@ -302,7 +331,7 @@ function ProjectCard({
         </div>
         <div className="pt-4">
           <Link href={projectUrl}>
-            <Button variant="outline" size="sm" className="border-coffee text-coffee hover:bg-coffee hover:text-cream">
+            <Button variant="outline" size="sm" className="bg-white border-coffee text-coffee hover:bg-gray-50 hover:text-coffee">
               {buttonText}
             </Button>
           </Link>
